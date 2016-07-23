@@ -1,7 +1,9 @@
 $(document).ready(function(){
 	var countTo = prompt('Please enter the number you\'d like to count to.');
-	countTo = parseInt(countTo);
-
+	while (isNaN(countTo)){
+		alert('please enter a valid number');
+		countTo = prompt('Please enter the number you\'d like to count to.');
+	}
 	for (var counter = 1; counter <= countTo; counter ++){
 		if ((counter%5 === 0)&(counter%3 === 0)){
 			$('body').append('<p>"FizzBuzz"</p>');
@@ -15,4 +17,4 @@ $(document).ready(function(){
 			$('body').append('<p>' +counter +'</p>');
 		};
 	};
-})
+});
